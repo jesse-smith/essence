@@ -4,6 +4,48 @@
     <loc>https://jesse-smith.github.io/essence//index.html</loc>
   </url>
   <url>
-    <loc>https://jesse-smith.github.io/essence//reference/es_creds_set.html</loc>
+    <loc>https://jesse-smith.github.io/essence//reference/abort_status.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/assert_bool.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/auth.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/es_GET.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/es_creds.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/es_datasources.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/es_fields.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/es_uri.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/essence-package.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/essence-vctrs.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/secret-helpers-internal.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/secret-methods.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/secret.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/std_class.html</loc>
+  </url>
+  <url>
+    <loc>https://jesse-smith.github.io/essence//reference/validate_secret.html</loc>
   </url>
 </urlset>
