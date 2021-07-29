@@ -11,6 +11,8 @@
 #' @return A `tibble` with columns `parentParamName`, `description`,
 #'   `dataBeanId`, `paramName`, `id`, `label`, `parentValue`, `type`
 #'   (all `chr`)
+#'
+#' @export
 es_fields <- function(datasource, creds = es_creds_get(), check = TRUE) {
   assert_bool(check)
   if (check) assert_datasource(datasource, creds = creds)
