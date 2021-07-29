@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get Field Information for an ESSENCE Data Source — es_fields • essence</title>
+<title>Get Possible Values for an ESSENCE Field — es_values • essence</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Get Field Information for an ESSENCE Data Source — es_fields" />
-<meta property="og:description" content="Get Field Information for an ESSENCE Data Source" />
+<meta property="og:title" content="Get Possible Values for an ESSENCE Field — es_values" />
+<meta property="og:description" content="Get Possible Values for an ESSENCE Field" />
 
 
 
@@ -108,20 +108,25 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get Field Information for an ESSENCE Data Source</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jesse-smith/essence/blob/master/R/es_fields.R'><code>R/es_fields.R</code></a></small>
-    <div class="hidden name"><code>es_fields.Rd</code></div>
+    <h1>Get Possible Values for an ESSENCE Field</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jesse-smith/essence/blob/master/R/es_values.R'><code>R/es_values.R</code></a></small>
+    <div class="hidden name"><code>es_values.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get Field Information for an ESSENCE Data Source</p>
+    <p>Get Possible Values for an ESSENCE Field</p>
     </div>
 
-    <pre class="usage"><span class='fu'>es_fields</span><span class='op'>(</span><span class='va'>datasource</span>, creds <span class='op'>=</span> <span class='fu'><a href='es_creds.html'>es_creds_get</a></span><span class='op'>(</span><span class='op'>)</span>, check <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>es_values</span><span class='op'>(</span><span class='va'>field</span>, <span class='va'>datasource</span>, creds <span class='op'>=</span> <span class='fu'><a href='es_creds.html'>es_creds_get</a></span><span class='op'>(</span><span class='op'>)</span>, check <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>field</th>
+      <td><p><code>character</code>. A field id within the given <code>datasource</code> (see
+<code><a href='es_fields.html'>es_fields()</a></code> for choices)</p></td>
+    </tr>
     <tr>
       <th>datasource</th>
       <td><p><code>[character(1)]</code>. A datasource name
@@ -140,9 +145,7 @@ ESSENCE?</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>tibble</code> with columns <code>parentParamName</code>, <code>description</code>,
-<code>dataBeanId</code>, <code>paramName</code>, <code>id</code>, <code>label</code>, <code>parentValue</code>, <code>type</code>
-(all <code>chr</code>)</p>
+    <p>A <code>tibble</code> with columns <code>display</code> and <code>value</code> (both <code>chr</code>)</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

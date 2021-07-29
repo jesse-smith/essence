@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get Field Information for an ESSENCE Data Source — es_fields • essence</title>
+<title>Check TimeSeries Query Arguments — check_ts_query • essence</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Get Field Information for an ESSENCE Data Source — es_fields" />
-<meta property="og:description" content="Get Field Information for an ESSENCE Data Source" />
+<meta property="og:title" content="Check TimeSeries Query Arguments — check_ts_query" />
+<meta property="og:description" content="Check TimeSeries Query Arguments" />
 
 
 
@@ -108,41 +108,62 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get Field Information for an ESSENCE Data Source</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jesse-smith/essence/blob/master/R/es_fields.R'><code>R/es_fields.R</code></a></small>
-    <div class="hidden name"><code>es_fields.Rd</code></div>
+    <h1>Check TimeSeries Query Arguments</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jesse-smith/essence/blob/master/R/es_ts.R'><code>R/es_ts.R</code></a></small>
+    <div class="hidden name"><code>check_ts_query.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get Field Information for an ESSENCE Data Source</p>
+    <p>Check TimeSeries Query Arguments</p>
     </div>
 
-    <pre class="usage"><span class='fu'>es_fields</span><span class='op'>(</span><span class='va'>datasource</span>, creds <span class='op'>=</span> <span class='fu'><a href='es_creds.html'>es_creds_get</a></span><span class='op'>(</span><span class='op'>)</span>, check <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>check_ts_query</span><span class='op'>(</span>
+  <span class='va'>datasource</span>,
+  <span class='va'>startDate</span>,
+  <span class='va'>endDate</span>,
+  <span class='va'>timeResolution</span>,
+  <span class='va'>dots</span>,
+  creds <span class='op'>=</span> <span class='fu'><a href='es_creds.html'>es_creds_get</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>datasource</th>
-      <td><p><code>[character(1)]</code>. A datasource name
-(see <code><a href='es_datasources.html'>es_datasources()</a></code> for choices)</p></td>
+      <td><p><code>[character(1)]</code> An ESSENCE data source; see
+<code>es_datasource()</code> for available options</p></td>
+    </tr>
+    <tr>
+      <th>startDate</th>
+      <td><p><code>[Date(1)]</code> or an object that can be coerced to one.
+The start date for the query.</p></td>
+    </tr>
+    <tr>
+      <th>endDate</th>
+      <td><p><code>[Date(1)]</code> or an object that can be coerced to one.
+The end date for the query.</p></td>
+    </tr>
+    <tr>
+      <th>timeResolution</th>
+      <td><p><code>[character(1)]</code>. The resolution of the returned
+timeseries.</p></td>
+    </tr>
+    <tr>
+      <th>dots</th>
+      <td><p>Additional query parameters; see the
+<a href='https://essence.tn.gov/tn_state/usersguide/UsersGuide.jsp'>ESSENCE User Guide</a>
+(in particular the API section) for details. All arguments must be named.</p></td>
     </tr>
     <tr>
       <th>creds</th>
       <td><p><code>secret</code>. User login credentials for ESSENCE.</p></td>
     </tr>
-    <tr>
-      <th>check</th>
-      <td><p><code>logical</code>. Should arguments be checked before querying
-ESSENCE?</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>tibble</code> with columns <code>parentParamName</code>, <code>description</code>,
-<code>dataBeanId</code>, <code>paramName</code>, <code>id</code>, <code>label</code>, <code>parentValue</code>, <code>type</code>
-(all <code>chr</code>)</p>
+    <p><code>TRUE</code> (invisibly) if assertions are passed</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

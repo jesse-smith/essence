@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get Field Information for an ESSENCE Data Source — es_fields • essence</title>
+<title>Check/Assert that an Object is a Valid ESSENCE Field ID — check_field • essence</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Get Field Information for an ESSENCE Data Source — es_fields" />
-<meta property="og:description" content="Get Field Information for an ESSENCE Data Source" />
+<meta property="og:title" content="Check/Assert that an Object is a Valid ESSENCE Field ID — check_field" />
+<meta property="og:description" content="Check/Assert that an Object is a Valid ESSENCE Field ID" />
 
 
 
@@ -108,16 +108,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get Field Information for an ESSENCE Data Source</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jesse-smith/essence/blob/master/R/es_fields.R'><code>R/es_fields.R</code></a></small>
-    <div class="hidden name"><code>es_fields.Rd</code></div>
+    <h1>Check/Assert that an Object is a Valid ESSENCE Field ID</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jesse-smith/essence/blob/master/R/utils-check_essence.R'><code>R/utils-check_essence.R</code></a></small>
+    <div class="hidden name"><code>check_field.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get Field Information for an ESSENCE Data Source</p>
+    <p>Check/Assert that an Object is a Valid ESSENCE Field ID</p>
     </div>
 
-    <pre class="usage"><span class='fu'>es_fields</span><span class='op'>(</span><span class='va'>datasource</span>, creds <span class='op'>=</span> <span class='fu'><a href='es_creds.html'>es_creds_get</a></span><span class='op'>(</span><span class='op'>)</span>, check <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>check_field</span><span class='op'>(</span>
+  <span class='va'>field</span>,
+  <span class='va'>datasource</span>,
+  creds <span class='op'>=</span> <span class='fu'><a href='es_creds.html'>es_creds_get</a></span><span class='op'>(</span><span class='op'>)</span>,
+  check_datasource <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fmatch <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
+
+<span class='fu'>assert_field</span><span class='op'>(</span>
+  <span class='va'>field</span>,
+  <span class='va'>datasource</span>,
+  creds <span class='op'>=</span> <span class='fu'><a href='es_creds.html'>es_creds_get</a></span><span class='op'>(</span><span class='op'>)</span>,
+  check_datasource <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fmatch <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  add <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -132,17 +147,25 @@
       <td><p><code>secret</code>. User login credentials for ESSENCE.</p></td>
     </tr>
     <tr>
-      <th>check</th>
-      <td><p><code>logical</code>. Should arguments be checked before querying
-ESSENCE?</p></td>
+      <th>fmatch</th>
+      <td><p>[<code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>]<br />
+Use the set operations implemented in <code><a href='https://rdrr.io/pkg/fastmatch/man/fmatch.html'>fmatch</a></code> in package <span class="pkg">fastmatch</span>.
+If <span class="pkg">fastmatch</span> is not installed, this silently falls back to <code><a href='https://rdrr.io/r/base/match.html'>match</a></code>.
+<code><a href='https://rdrr.io/pkg/fastmatch/man/fmatch.html'>fmatch</a></code> modifies <code>y</code> by reference:
+A hash table is added as attribute which is used in subsequent calls.</p></td>
+    </tr>
+    <tr>
+      <th>add</th>
+      <td><p>[<code>AssertCollection</code>]<br />
+Collection to store assertion messages. See <code><a href='https://rdrr.io/pkg/checkmate/man/AssertCollection.html'>AssertCollection</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>tibble</code> with columns <code>parentParamName</code>, <code>description</code>,
-<code>dataBeanId</code>, <code>paramName</code>, <code>id</code>, <code>label</code>, <code>parentValue</code>, <code>type</code>
-(all <code>chr</code>)</p>
+    <p><code>check_*()</code> returns <code>TRUE</code> if successful or a error message string
+otherwise; <code>assert_*()</code> returns <code>x</code> (invisibly) if successful or an
+error otherwise</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
