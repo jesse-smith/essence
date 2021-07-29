@@ -14,6 +14,8 @@ NULL
 #'
 #' @export
 
+#' @importFrom data.table := .SD .BY .N .I .GRP .NGRP .EACHI
+
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start

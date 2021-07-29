@@ -11,20 +11,22 @@ Description: {essence} provides an R interface to select data from the TN
 License: MIT + file LICENSE
 URL: https://github.com/jesse-smith/essence
 BugReports: https://github.com/jesse-smith/essence/issues
+Depends: 
+    R (>= 2.10)
+Imports: 
+    checkmate (>= 2.0.0),
+    data.table (>= 1.13.0),
+    keyring (>= 1.0.0),
+    purrr (>= 0.3.0),
+    rlang (>= 0.4.0),
+    tibble (>= 3.0.0),
+    vctrs (>= 0.3.0)
 Suggests: 
     covr,
+    fastmatch,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports: 
-    vctrs (>= 0.3.0),
-    keyring (>= 1.0.0),
-    checkmate (>= 2.0.0),
-    rlang (>= 0.4.0),
-    tibble (>= 3.0.0),
-    purrr (>= 0.3.0)
-Depends: 
-    R (>= 2.10)
