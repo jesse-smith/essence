@@ -1,12 +1,27 @@
-#' Assert that an object is either `TRUE` or `FALSE`
+#' Check/Assert that an Object is Either `TRUE` or `FALSE`
 #'
 #' @param x The object to check
 #'
-#' @return `x` (invisibly), or an error if failed
+#' @return `check_*()` returns `TRUE` if successful or a error message string
+#'   otherwise; `assert_*()` returns `x` (invisibly) if successful or an
+#'   error otherwise
 #'
 #' @keywords internal
+#'
+#' @aliases assert_bool
+check_bool <- function(x) {
+  checkmate::check_logical(x, any.missing = FALSE, len = 1L, null.ok = FALSE)
+}
+
+#' @rdname check_bool
 assert_bool <- function(x) {
-  checkmate::assert_logical(x, any.missing = FALSE, len = 1L, null.ok = FALSE)
+  checkmate::assert_logical(
+    x,
+    any.missing = FALSE,
+    len = 1L,
+    null.ok = FALSE,
+    .var.name = rlang::expr_label(rlang::enexpr(x))
+  )
 }
 
 #' Standardize a Class
