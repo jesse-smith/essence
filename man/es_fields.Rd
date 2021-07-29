@@ -4,13 +4,16 @@
 \alias{es_fields}
 \title{Get Field Information for an ESSENCE Data Source}
 \usage{
-es_fields(datasource, creds = es_creds_get())
+es_fields(datasource, creds = es_creds_get(), check = TRUE)
 }
 \arguments{
-\item{datasource}{\code{character}. A datasource name
+\item{datasource}{\verb{[character(1)]}. A datasource name
 (see \code{\link[essence:es_datasources]{es_datasources()}} for choices)}
 
-\item{creds}{\code{secret}. ESSENCE login credentials}
+\item{creds}{\code{secret}. User login credentials for ESSENCE.}
+
+\item{check}{\code{logical}. Should arguments be checked before querying
+ESSENCE?}
 }
 \value{
 A \code{tibble} with columns \code{parentParamName}, \code{description},
